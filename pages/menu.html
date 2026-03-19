@@ -22,25 +22,21 @@
         <a href="./about.html">About us</a>
         <a href="./services.html">Service</a>
         <a href="./menu.html">Menu</a>
-        <a href="./cart.html">cart</a>
+        <a class="cart">
+          <img src="../assets/images/cart-arrow-down-solid.png" alt="cart" />
+        </a>
         <a href="./login.html">Login</a>
       </div>
     </header>
 
     <main class="main">
       <section class="products-sec">
-          <h3 class="categories-head">Categories</h3>
+        <h3 class="categories-head">Categories</h3>
         <div class="categories-div"></div>
-
-        
-
-
-
 
         <div class="cat-filter">
           <form class="filter-form">
             <div class="vegetarian-div">
-
               <select id="vegetarianSel">
                 <option value="">Show All</option>
                 <option value="true">Vegetarian</option>
@@ -50,7 +46,6 @@
             </div>
 
             <div class="nuts-div">
-
               <select id="nutsSel">
                 <option value="">Show All</option>
                 <option value="true">Nuts</option>
@@ -59,37 +54,49 @@
               <label for="nutsSel">Nuts</label>
             </div>
 
-          
             <div class="spice-div">
-
-              <select  id="spicinesSel">
+              <select id="spicinesSel">
                 <option value="">Show All</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
-                
               </select>
               <label for="spicinesSel">Spiciness</label>
             </div>
-          
 
             <div class="cat-sel">
-
               <select id="categorySel"></select>
               <label for="categorySel">Categories</label>
             </div>
 
             <div class="cat-button">
-
               <button type="reset" id="resetFilter">Reset</button>
               <button type="submit" id="submitFilter">Search</button>
             </div>
-
-        </form>
+          </form>
           <div class="products-div"></div>
         </div>
       </section>
+
+      <section class="cart-sec hidden">
+        <h2>Your Products</h2>
+        <div class="cart-header">
+          <span>Product</span>
+          <span>Quantity</span>
+          <span>Price</span>
+          <span>Total Price</span>
+        </div>
+        <div class="cart-product"></div>
+        <div class="total-div">
+         <span>Total Price:</span> 
+         <button class="checkout">Go To Checkout</button>
+        </div>
+
+      </section>
+
+
+
     </main>
 
     <footer></footer>

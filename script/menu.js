@@ -79,8 +79,7 @@ function categories(list) {
   });
 }
 
-
-// categories filter 
+// categories filter
 fetch("https://restaurant.stepprojects.ge/api/Categories/GetAll")
   .then((resp) => resp.json())
   .then((data) => categoriesSel(data));
@@ -99,17 +98,16 @@ function categoriesSel(form) {
   });
 }
 
+// categories reset button
 
-// categories reset button 
-
-const filterReset= document.querySelector("#resetFilter");
-const filterSubmit= document.querySelector("#submitFilter");
+const filterReset = document.querySelector("#resetFilter");
+const filterSubmit = document.querySelector("#submitFilter");
 
 filterReset.addEventListener("click", () => {
   fetch(`https://restaurant.stepprojects.ge/api/Products/GetFiltered?`)
     .then((resp) => resp.json())
     .then((data) => products(data));
-})
+});
 
 // categories submit button
 
@@ -125,6 +123,24 @@ filterSubmit.addEventListener("click", (event) => {
   )
     .then((resp) => resp.json())
     .then((data) => products(data));
-}) 
+});
 
+// cart functional
 
+const cartBtn = document.querySelector("cart");
+cartBtn.addEventListener("click", () => {
+  document.querySelector("products-sec").classList.toggle("hidden");
+  document.querySelector("cart-sec").classList.toggle("hidden");
+  cartShow();
+});
+
+function cartShow() {
+  const cartProduct = document.querySelector(".cart-product");
+  cartProduct.innerHTML = "";
+  fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
+    .then((resp) => resp.json())
+    .then((data) => {
+      const cartItem = document.createElement("div");
+      cartItem.classList.add("");
+    });
+}
