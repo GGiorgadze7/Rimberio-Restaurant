@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/menu.css" />
+    <script src="../script/menu.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="title-div">
+        <img
+          src="../assets/images/Untitled design (2)-Photoroom.png"
+          alt="logo"
+        />
+        <h1>Rimberio Restaurant</h1>
+      </div>
+
+      <div class="nav-div">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About us</a>
+        <a href="./services.html">Service</a>
+        <a href="./menu.html">Menu</a>
+        <a href="./cart.html">cart</a>
+        <a href="./login.html">Login</a>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="products-sec">
+          <h3 class="categories-head">Categories</h3>
+        <div class="categories-div"></div>
+
+        
+
+
+
+
+        <div class="cat-filter">
+          <form class="filter-form">
+            <div class="vegetarian-div">
+
+              <select id="vegetarianSel">
+                <option value="">Show All</option>
+                <option value="true">Vegetarian</option>
+                <option value="false">Not Vegetarian</option>
+              </select>
+              <label for="vegetarianSel">Vegetarian</label>
+            </div>
+
+            <div class="nuts-div">
+
+              <select id="nutsSel">
+                <option value="">Show All</option>
+                <option value="true">Nuts</option>
+                <option value="false">No Nuts</option>
+              </select>
+              <label for="nutsSel">Nuts</label>
+            </div>
+
+          
+            <div class="spice-div">
+
+              <select  id="spicinesSel">
+                <option value="">Show All</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                
+              </select>
+              <label for="spicinesSel">Spiciness</label>
+            </div>
+          
+
+            <div class="cat-sel">
+
+              <select id="categorySel"></select>
+              <label for="categorySel">Categories</label>
+            </div>
+
+            <div class="cat-button">
+
+              <button type="reset" id="resetFilter">Reset</button>
+              <button type="submit" id="submitFilter">Search</button>
+            </div>
+
+        </form>
+          <div class="products-div"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
