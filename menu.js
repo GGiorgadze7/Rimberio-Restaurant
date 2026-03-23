@@ -1,3 +1,12 @@
+// burger menu
+const burgerBtn = document.querySelector(".burger-btn");
+const nav = document.querySelector(".burger-nav");
+
+burgerBtn.addEventListener("click", () => {
+  nav.classList.toggle("nav-active");
+  burgerBtn.classList.toggle("burger-nav");
+});
+
 // card ები
 fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
   .then((resp) => resp.json())
@@ -127,20 +136,108 @@ filterSubmit.addEventListener("click", (event) => {
 
 // cart functional
 
-const cartBtn = document.querySelector("cart");
+const cartBtn = document.querySelector(".cart");
 cartBtn.addEventListener("click", () => {
-  document.querySelector("products-sec").classList.toggle("hidden");
-  document.querySelector("cart-sec").classList.toggle("hidden");
-  cartShow();
+  document.querySelector(".products-sec").classList.toggle("hidden");
+  document.querySelector(".cart-sec").classList.toggle("hidden");
+  fetchCart();
 });
 
-function cartShow() {
-  const cartProduct = document.querySelector(".cart-product");
-  cartProduct.innerHTML = "";
+function fetchCart() {
+  const cartItemsMain = document.querySelector(".cart-product");
+  cartItemsMain.innerHTML = "";
   fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
     .then((resp) => resp.json())
     .then((data) => {
-      const cartItem = document.createElement("div");
-      cartItem.classList.add("");
+      data.forEach((item) => {
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cartItem");
+
+        const cartItemName = document.createElement("div");
+        cartItemName.classList.add("cartItemName");
+        const cartImage = document.createElement("img");
+        cartImage.src = item.product.image;
+        const cartName = document.createElement("h3");
+        cartName.textContent = item.product.name;
+        cartItemName.append(cartImage, cartName);
+
+        const qty = document.createElement("div");
+        qty.classList.add("qty");
+        qty.textContent = item.quantity;
+
+        const qtyMinus = document.createElement("button");
+        qtyMinus.textContent = "-";
+        const qtyPlus = document.createElement("button");
+        qtyPlus.textContent = "+";
+        qty.prepend(qtyMinus);
+        qty.append(qtyPlus);
+
+        const price = document.createElement("span");
+        price.classList.add("price");
+        price.textContent = item.product.price;
+
+        const total = document.createElement("span");
+        total.classList.add("total");
+        total.textContent = item.quantity * item.product.price;
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.classList.add("deleteBtn");
+        deleteBtn.id = "deleteBtnId";
+        deleteBtn.textContent = "X";
+
+        cartItem.append(cartItemName, qty, price, total, deleteBtn);
+
+        deleteBtn.addEventListener("click", () =>
+          productDelete(item.product.id),
+        );
+
+        qtyMinus.addEventListener("click", () =>
+          updateQuantity(
+            item.quantity - 1,
+            item.product.price,
+            item.product.id,
+          ),
+        );
+        qtyPlus.addEventListener("click", () =>
+          updateQuantity(
+            item.quantity + 1,
+            item.product.price,
+            item.product.id,
+          ),
+        );
+
+        cartItemsMain.appendChild(cartItem);
+      });
+      let allTotal = 0;
+      data.reduce(function (acc, item) {
+        allTotal = acc + item.quantity * item.product.price;
+        return allTotal;
+      }, 0);
+
+      document.querySelector(".totalPrice").textContent = "$" + allTotal;
     });
+}
+
+function productDelete(id) {
+  fetch(`https://restaurant.stepprojects.ge/api/Baskets/DeleteProduct/${id}`, {
+    method: "DELETE",
+  }).then(() => fetchCart());
+}
+
+function updateQuantity(quantity, price, productId) {
+  if (quantity < 1) {
+    return;
+  }
+
+  const reqBodyObj = {
+    quantity: quantity,
+    price: price,
+    productId: productId,
+  };
+
+  fetch("https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(reqBodyObj),
+  }).then(() => fetchCart());
 }

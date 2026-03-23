@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/user.css" />
+    <script src="../script/user.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="title-div">
+        <img
+          src="../assets/images/Untitled design (2)-Photoroom.png"
+          alt="logo"
+        />
+        <h1>Rimberio Restaurant</h1>
+      </div>
+
+      <div class="nav-div">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About us</a></li>
+          <li><a href="./services.html">Service</a></li>
+          <li><a href="./menu.html">Menu</a></li>
+          <li class="cart-list">
+            <a class="cart">
+              <img
+                src="../assets/images/cart-arrow-down-solid.png"
+                alt="cart"
+              />
+            </a>
+          </li>
+          <li><a href="./login.html">Login</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <nav class="burger-nav">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About us</a></li>
+        <li><a href="./services.html">Service</a></li>
+        <li><a href="./menu.html">Menu</a></li>
+        <li>
+          <a class="cart">
+            <img src="../assets/images/cart-arrow-down-solid.png" alt="cart" />
+          </a>
+        </li>
+        <li><a href="./login.html">Login</a></li>
+      </ul>
+    </nav>
+
+    <button class="burger-btn"></button>
+
+    <main class="main">
+      <h1 class="title">Welcome</h1>
+      <form class="signin-form ">
+        <label for="signin-email">EMAIL ADDRESS</label>
+        <input type="email" id="signin-email" placeholder="Email" required />
+        <label for="signin-pas">PASSWORD</label>
+        <input
+          type="password"
+          id="signin-pas"
+          placeholder="Password"
+          required
+        />
+
+        <button type="submit" id="signinsubmit">SIGN IN</button>
+      </form>
+      <div class="buttons">
+        <h2 class="signtext hidden"> Already have an account? <p class="signbtn hidden">Sign In</p></h2>
+        <h3 class="regtext">Dont have an account? <p class="regbtn">Register</p></h3>
+      </div>
+
+      <form class="reg-form hidden">
+        <input type="text" id="regFirstName" placeholder="FirstName" required />
+        <input type="text" id="regLastName" placeholder="LastName" required />
+        <input type="email" id="regEmail" placeholder="Email" required />
+        <input
+          type="password"
+          id="regPassword"
+          placeholder="Password"
+          required
+        />
+        <input
+          type="number"
+          id="regNumber"
+          placeholder="Phone Number"
+          required
+        />
+        <button type="reset" id="regReset">Reset</button>
+        <button type="submit" id="regSubmit">Register</button>
+      </form>
+    </main>
+  </body>
+</html>

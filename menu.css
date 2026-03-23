@@ -31,6 +31,19 @@ header {
   margin-bottom: 50px;
 }
 
+header ul {
+  display: flex;
+  gap: 20px;
+}
+
+header ul li {
+  list-style: none;
+}
+header ul li img {
+  width: 40px;
+  height: 40px;
+}
+
 .cart {
   width: 3%;
   display: flex;
@@ -38,9 +51,10 @@ header {
   align-items: center;
 }
 
-.cart img {
-  width: 100%;
-  height: 100%;
+.nav-div ul .cart-list {
+  width: 10px;
+  height: 50px;
+  margin-left: 10px;
 }
 
 body header .title-div {
@@ -67,11 +81,9 @@ body header .title-div h1 {
 }
 
 body header .nav-div {
-  display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 10%;
-  gap: 30px;
 }
 
 body header .nav-div a {
@@ -263,4 +275,167 @@ body header .nav-div a {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+
+/* cart styles */
+
+.cart-sec {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cartItem,
+.cart-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #ecba7b;
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.cart-sec h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.cartItemName {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cartItem img {
+  width: 15%;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 35%;
+  right: 2%;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ec1837;
+  cursor: pointer;
+}
+
+.deleteBtn::after {
+  content: "Delete";
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2a2d33;
+  color: var(--text-color-light);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.deleteBtn:hover::after {
+  opacity: 1;
+}
+
+.deleteBtn:hover {
+  color: var(--accent-color2);
+}
+.deleteBtn:active {
+  color: var(--accent-color);
+}
+
+.total-div {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* burger menu */
+
+.burger-nav {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  z-index: 1000;
+  background-color: #543b1c;
+  transition: all 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger-nav a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+}
+
+.burger-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.burger-nav ul li {
+  list-style: none;
+}
+
+.burger-nav ul li img {
+  padding-left: 20px;
+}
+
+.burger-btn {
+  display: none;
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  border: none;
+  background-image: url("./assets/images/bars-solid.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nav-active {
+  right: 0;
+}
+
+.activeBurger {
+  background-image: url("./assets/icons/xmark-solid.svg");
+}
+
+.cart img {
+  width: 40px;
+  height: 45px;
+}
+
+@media (max-width: 768px) {
+  .burger-btn {
+    display: flex;
+    position: fixed;
+    z-index: 1001;
+    right: 15px;
+    top: 18px;
+  }
+
+  .nav-div {
+    display: none;
+  }
 }

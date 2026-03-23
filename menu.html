@@ -18,16 +18,40 @@
       </div>
 
       <div class="nav-div">
-        <a href="./index.html">Home</a>
-        <a href="./about.html">About us</a>
-        <a href="./services.html">Service</a>
-        <a href="./menu.html">Menu</a>
-        <a class="cart">
-          <img src="../assets/images/cart-arrow-down-solid.png" alt="cart" />
-        </a>
-        <a href="./login.html">Login</a>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About us</a></li>
+          <li><a href="./services.html">Service</a></li>
+          <li><a href="./menu.html">Menu</a></li>
+          <li class="cart-list">
+            <a class="cart">
+              <img
+                src="../assets/images/cart-arrow-down-solid.png"
+                alt="cart"
+              />
+            </a>
+          </li>
+          <li><a href="./login.html">Login</a></li>
+        </ul>
       </div>
     </header>
+
+    <nav class="burger-nav">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About us</a></li>
+        <li><a href="./services.html">Service</a></li>
+        <li><a href="./menu.html">Menu</a></li>
+        <li>
+          <a class="cart">
+            <img src="../assets/images/cart-arrow-down-solid.png" alt="cart" />
+          </a>
+        </li>
+        <li><a href="./login.html">Login</a></li>
+      </ul>
+    </nav>
+
+    <button class="burger-btn"></button>
 
     <main class="main">
       <section class="products-sec">
@@ -80,7 +104,7 @@
       </section>
 
       <section class="cart-sec hidden">
-        <h2>Your Products</h2>
+        <h1>Your Products</h1>
         <div class="cart-header">
           <span>Product</span>
           <span>Quantity</span>
@@ -89,14 +113,13 @@
         </div>
         <div class="cart-product"></div>
         <div class="total-div">
-         <span>Total Price:</span> 
-         <button class="checkout">Go To Checkout</button>
+          <span
+            >Total Price:
+            <p class="totalPrice"></p
+          ></span>
+          <button class="checkout">Go To Checkout</button>
         </div>
-
       </section>
-
-
-
     </main>
 
     <footer></footer>
