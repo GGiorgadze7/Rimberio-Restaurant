@@ -23,21 +23,34 @@
     <header>
       <div class="title-div">
         <img
-          src="./assets/images/Untitled design (2)-Photoroom.png"
+          src="../assets/images/Untitled design (2)-Photoroom.png"
           alt="logo"
         />
         <h1>Rimberio Restaurant</h1>
       </div>
 
       <div class="nav-div">
-        <a href="./index.html">Home</a>
-        <a href="./about.html">About us</a>
-        <a href="./services.html">Service</a>
-        <a href="./menu.html">Menu</a>
-        <a href="./cart.html">cart</a>
-        <a href="./pages/login.html">Login</a>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./pages/about.html">About us</a></li>
+          <li><a href="./pages/services.html">Service</a></li>
+          <li><a href="./pages/menu.html">Menu</a></li>
+          <li><a href="./pages/login.html">Login</a></li>
+        </ul>
       </div>
     </header>
+
+    <nav class="burger-nav">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./pages/about.html">About us</a></li>
+        <li><a href="./pages/services.html">Service</a></li>
+        <li><a href="./menu.html">Menu</a></li>
+        <li><a href="./pages/login.html">Login</a></li>
+      </ul>
+    </nav>
+
+    <button class="burger-btn"></button>
 
     <main class="main">
       <section class="hero-sec">
@@ -57,7 +70,7 @@
             or multimedia displays.
           </p>
           <div class="button-div">
-          <a href="/pages/about.html"><button>See more</button></a>
+            <a href="./pages/about.html"><button>See more</button></a>
           </div>
         </div>
 
@@ -71,30 +84,71 @@
             or multimedia displays.
           </p>
           <div class="button-div">
-          <a href="/pages/about.html"><button>See more</button></a>
+            <a href="./pages/about.html"><button>See more</button></a>
           </div>
         </div>
-
       </section>
 
       <section class="menu-sec">
         <div class="text-div">
           <h1>menu highlights</h1>
-          <p>A presentation is a formal talk, often delivered in front of an audience, aimed at conveying information, persuading others, or sharing insights on a particular topic. Presentations can take various forms, such as verbal speeches, slideshows, demonstrations, or multimedia displays. They are commonly used in academic, professional, and social settings to communicate ideas, proposals, reports, or findings.</p>
+          <p>
+            A presentation is a formal talk, often delivered in front of an
+            audience, aimed at conveying information, persuading others, or
+            sharing insights on a particular topic. Presentations can take
+            various forms, such as verbal speeches, slideshows, demonstrations,
+            or multimedia displays. They are commonly used in academic,
+            professional, and social settings to communicate ideas, proposals,
+            reports, or findings.
+          </p>
         </div>
 
         <div class="img-div">
-          <img src="./assets/images/food2.png" alt="food">
-          <img src="./assets/images/food3.png" alt="food">
-          <img src="./assets/images/food4.png" alt="food">
-          <img src="./assets/images/food5.png" alt="food">
+          <img src="./assets/images/food2.png" alt="food" />
+          <img src="./assets/images/food3.png" alt="food" />
+          <img src="./assets/images/food4.png" alt="food" />
+          <img src="./assets/images/food5.png" alt="food" />
         </div>
 
         <a href="./menu.html"><button>See Full Menu</button></a>
+      </section>
 
+      <section class="top-products">
+        <h1>BEST SELLER MENU</h1>
+
+        <div class="cards"></div>
       </section>
     </main>
 
-    <footer></footer>
+    <footer class="footer">
+      <div class="footer-title">
+        <img
+          src="../assets/images/Untitled design (2)-Photoroom.png"
+          alt="logo"
+        />
+        <h1>Rimberio Restaurant</h1>
+      </div>
+      <div class="footer-nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./pages/about.html">About us</a></li>
+          <li><a href="./pages/services.html">Service</a></li>
+          <li><a href="./menu.html">Menu</a></li>
+          <li><a href="./pages/login.html">Login</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-iframe">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.260184768831!2d44.8015038!3d41.6933186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440d57d314f4a7%3A0x692f47f1da1dd66a!2z4YOX4YOQ4YOV4YOY4YOh4YOj4YOk4YOa4YOU4YOR4YOY4YOhIOGDm-GDneGDlOGDk-GDkOGDnOGDmA!5e0!3m2!1ska!2sge!4v1774604468713!5m2!1ska!2sge"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </footer>
   </body>
 </html>

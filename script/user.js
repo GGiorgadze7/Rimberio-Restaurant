@@ -18,7 +18,6 @@ const regReset = document.querySelector("#regReset");
 const regSubmit = document.querySelector("#regSubmit");
 const regForm = document.querySelector(".reg-form");
 const regText = document.querySelector(".regtext");
-// const signInForm = document.querySelector(".signin-form");
 const signText = document.querySelector(".signtext");
 const regBtn = document.querySelector(".regbtn");
 const signBtn = document.querySelector(".signbtn");
