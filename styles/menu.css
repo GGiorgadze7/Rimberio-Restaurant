@@ -6,12 +6,15 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Romanesco", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
   width: 100%;
   height: 100%;
-  background-color: #543b1c;
+  background: radial-gradient(ellipse at top, #3b2b01, #020100)
 }
 
 .hidden {
@@ -103,6 +106,8 @@ body header .nav-div a {
   margin-bottom: 50px;
   justify-content: center;
   border-radius: 20px;
+  gap: 10px ;
+  flex-wrap: wrap;
 }
 
 .categories-head {
@@ -110,24 +115,36 @@ body header .nav-div a {
   text-align: center;
   margin-bottom: 20px;
   color: #ecba7b;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .categories-div button {
-  background-color: #ecba7b;
-  border: none;
+  background-color: rgba(0, 0, 0, 0);
+
+  width: 140px;
+  border: solid 1px rgb(177, 174, 174);
+  border-radius: 8px;
   text-align: center;
   padding: 10px 20px;
   cursor: pointer;
+  font-size: 1.3rem;
+  color: white;
 }
 
 .categories-div button:hover {
-  background-color: #f8a53f;
-  transition: all 0.4s;
+  background-color: #686867;
+  transition: all 0.3s;
+  scale: 1.1;
+}
+
+.categories-div button:active {
+  transition: all ;
+  background-color: #00000000;
 }
 
 .filter-form {
-  width: 14%;
+  padding-left: 30px;
+  padding-right: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -137,62 +154,85 @@ body header .nav-div a {
 .vegetarian-div {
   width: 200px;
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
+
 .filter-form #vegetarianSel {
-  width: 50%;
-  text-align: center;
+  width: 100%;
+  height: 40px;
   display: flex;
   align-items: center;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  background-color: #646464;
+  color: white;
+  outline: none;
 }
 
 .nuts-div {
   width: 200px;
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .filter-form #nutsSel {
-  width: 50%;
-  text-align: center;
+  width: 100%;
+  height: 40px;
   display: flex;
   align-items: center;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  background-color: #646464;
+  color: white;
+  outline: none;
+
 }
 
 .spice-div {
   width: 200px;
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 #spicinesSel {
-  width: 50%;
-  text-align: center;
+  width: 100%;
+   height: 40px;
   display: flex;
   align-items: center;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  background-color: #646464;
+  color: white;
+  outline: none;
 }
 
 .cat-sel {
   width: 200px;
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  align-items: center;
   margin-bottom: 15px;
 }
 
 #categorySel {
-  width: 50%;
-  text-align: center;
+  width: 100%;
+   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  background-color: #646464;
+  color: white;
+  outline: none;
+   
 }
 
 .cat-button {
@@ -201,20 +241,51 @@ body header .nav-div a {
 }
 
 #resetFilter {
-  padding: 5px 20px;
+  padding: 5px 23px;
   cursor: pointer;
   border: none;
   border-radius: 3px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  background-color: #646464;
+  color: white;
+}
+
+#resetFilter:hover {
+  transition: all 0.3s;
+  background-color: #2a2d33;
+  scale: 1.1;
+}
+
+#resetFilter:active {
+  background-color: #646464;
+  transition: all 0.1s;
 }
 
 #submitFilter {
-  padding: 5px 20px;
+  padding: 5px 23px;
   cursor: pointer;
   border: none;
   border-radius: 3px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  background-color: #646464;
+  color: white;
 }
 
+#submitFilter:hover {
+  transition: all 0.3s;
+  background-color: #2a2d33;
+  scale: 1.1;
+}
+#submitFilter:active {
+   background-color: #646464;
+  transition: all 0.1s;
+}
+
+
 .filter-form label {
+  font-size: 1.8rem;
   color: #ecba7b;
 }
 
@@ -407,7 +478,7 @@ body header .nav-div a {
   height: 2rem;
   background: none;
   border: none;
-  background-image: url("./assets/images/bars-solid.png");
+  background-image: url("../assets/images/bars-solid.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -418,7 +489,7 @@ body header .nav-div a {
 }
 
 .activeBurger {
-  background-image: url("./assets/icons/xmark-solid.svg");
+  background-image: url("../assets/images/xmark-solid.svg");  
 }
 
 .cart img {

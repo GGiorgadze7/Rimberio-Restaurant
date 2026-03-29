@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Caprasimo&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Gwendolyn:wght@400;700&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Romanesco&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../styles/menu.css" />
-    <script src="menu.js" defer></script>
+    <script src="../script/menu.js" defer></script>
     <title>Document</title>
   </head>
   <body>
@@ -55,30 +59,33 @@
 
     <main class="main">
       <section class="products-sec">
-        <h3 class="categories-head">Categories</h3>
+        <h3 class="categories-head">Our Menu</h3>
         <div class="categories-div"></div>
 
         <div class="cat-filter">
           <form class="filter-form">
             <div class="vegetarian-div">
+              <label for="vegetarianSel">Vegetarian</label>
               <select id="vegetarianSel">
                 <option value="">Show All</option>
                 <option value="true">Vegetarian</option>
                 <option value="false">Not Vegetarian</option>
               </select>
-              <label for="vegetarianSel">Vegetarian</label>
+              
             </div>
 
             <div class="nuts-div">
+              <label for="nutsSel">Nuts</label>
               <select id="nutsSel">
                 <option value="">Show All</option>
                 <option value="true">Nuts</option>
                 <option value="false">No Nuts</option>
               </select>
-              <label for="nutsSel">Nuts</label>
+              
             </div>
 
             <div class="spice-div">
+              <label for="spicinesSel">Spiciness</label>
               <select id="spicinesSel">
                 <option value="">Show All</option>
                 <option value="1">1</option>
@@ -86,12 +93,13 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
-              <label for="spicinesSel">Spiciness</label>
+              
             </div>
 
             <div class="cat-sel">
-              <select id="categorySel"></select>
               <label for="categorySel">Categories</label>
+              <select id="categorySel"></select>
+              
             </div>
 
             <div class="cat-button">

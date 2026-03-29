@@ -26,14 +26,16 @@ function renderCards(products) {
 
   products.forEach((product) => {
     const card = document.createElement("div");
+
     card.classList.add("card");
 
     card.innerHTML = `
       <img src="${product.image}" alt="${product.name}" />
       <h3>${product.name}</h3>
-      <p>${product.price} ₾</p>
+      <p>${"More than 50 sales in 1 week"}</p>
     `;
 
     cardsDiv.appendChild(card);
   });
 }
+
