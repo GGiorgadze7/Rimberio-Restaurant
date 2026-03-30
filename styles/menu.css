@@ -14,7 +14,7 @@
 body {
   width: 100%;
   height: 100%;
-  background: radial-gradient(ellipse at top, #3b2b01, #020100)
+  background: radial-gradient(ellipse at top, #3b2b01, #020100);
 }
 
 .hidden {
@@ -106,7 +106,7 @@ body header .nav-div a {
   margin-bottom: 50px;
   justify-content: center;
   border-radius: 20px;
-  gap: 10px ;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -129,16 +129,17 @@ body header .nav-div a {
   cursor: pointer;
   font-size: 1.3rem;
   color: white;
+  transition: all 0.3s;
 }
 
 .categories-div button:hover {
   background-color: #686867;
-  transition: all 0.3s;
+
   scale: 1.1;
 }
 
 .categories-div button:active {
-  transition: all ;
+  transition: all;
   background-color: #00000000;
 }
 
@@ -158,7 +159,6 @@ body header .nav-div a {
   gap: 10px;
   margin-bottom: 25px;
 }
-
 
 .filter-form #vegetarianSel {
   width: 100%;
@@ -190,7 +190,6 @@ body header .nav-div a {
   background-color: #646464;
   color: white;
   outline: none;
-
 }
 
 .spice-div {
@@ -203,7 +202,7 @@ body header .nav-div a {
 
 #spicinesSel {
   width: 100%;
-   height: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   font-size: 1.3rem;
@@ -223,7 +222,7 @@ body header .nav-div a {
 
 #categorySel {
   width: 100%;
-   height: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -232,7 +231,6 @@ body header .nav-div a {
   background-color: #646464;
   color: white;
   outline: none;
-   
 }
 
 .cat-button {
@@ -249,10 +247,10 @@ body header .nav-div a {
   border-radius: 8px;
   background-color: #646464;
   color: white;
+  transition: all 0.3s;
 }
 
 #resetFilter:hover {
-  transition: all 0.3s;
   background-color: #2a2d33;
   scale: 1.1;
 }
@@ -271,18 +269,17 @@ body header .nav-div a {
   border-radius: 8px;
   background-color: #646464;
   color: white;
+  transition: all 0.3s;
 }
 
 #submitFilter:hover {
-  transition: all 0.3s;
   background-color: #2a2d33;
   scale: 1.1;
 }
 #submitFilter:active {
-   background-color: #646464;
+  background-color: #646464;
   transition: all 0.1s;
 }
-
 
 .filter-form label {
   font-size: 1.8rem;
@@ -293,6 +290,7 @@ body header .nav-div a {
   display: flex;
 }
 
+/* products style */
 .products-div {
   width: 92.5%;
   display: flex;
@@ -305,7 +303,7 @@ body header .nav-div a {
 .card {
   width: 280px;
   height: 400px;
-  background-color: #ecba7b;
+  background: radial-gradient(#e0ba58, #c59361);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -313,6 +311,13 @@ body header .nav-div a {
   align-items: center;
   gap: 20px;
   text-align: center;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  scale: 1.05;
+
+  scale: 1.05;
 }
 
 .card img {
@@ -324,7 +329,7 @@ body header .nav-div a {
 
 .card h2 {
   color: #543b1c;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
@@ -332,8 +337,8 @@ body header .nav-div a {
 
 .card span {
   color: #543b1c;
-  font-size: 1rem;
-  font-family: "Romanesco", cursive;
+  font-size: 1.6rem;
+  font-family: "Gwendolyn", cursive;
   font-weight: 400;
   font-style: normal;
   text-align: center;
@@ -346,26 +351,72 @@ body header .nav-div a {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 1.3rem;
+  transition: all 0.3s;
+}
+
+.card button:hover {
+  background-color: #2a2d33;
+
+  scale: 1.1;
 }
 
 /* cart styles */
 
-.cart-sec {
-  max-width: 1200px;
-  margin: 0 auto;
+.cart-product {
+  width: 70%;
+  padding: 0 30px;
 }
 
-.cartItem,
-.cart-header {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+.cart-sec {
+  max-width: 100%;
+  display: flex;
+}
+
+.price {
+  font-size: 2rem;
+  color: #C9A84C;
+}
+
+.total {
+  font-size: 1.7rem;
+  padding-left: 50px;
+  text-align: center;
+}
+
+.qty {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.minusBtn {
+  width: 25px;
+  height: 25px;
+  font-size: 1rem;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.plus {
+  width: 25px;
+  height: 25px;
+  font-size: 1rem;
+  margin-left: 10px;
+  cursor: pointer;  
+}
+
+.cartItem {
+  display: flex;
   align-items: center;
   width: 100%;
+  height: auto;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: #ecba7b;
+  background-color: rgba(201, 168, 76, 0.12);
+  border: 1px solid #C9A84C;
   position: relative;
-  margin-top: 0.5rem;
+  margin-top: 20px;
+  color: white;
 }
 
 .cart-sec h1 {
@@ -376,23 +427,45 @@ body header .nav-div a {
 
 .cartItemName {
   display: flex;
+  width: 180px;
   align-items: center;
   gap: 15px;
+  margin-right: 50px;
 }
 
+.cart-food-name {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #E8D5A3;
+}
+
+.lorem {
+  font-size: 1.4rem;
+  width: 70%;
+  margin-bottom: 10px;
+  color: #A89070;
+}
+
+.cart-info {
+  width: 30%;
+}
+
+
+
 .cartItem img {
-  width: 15%;
+  width: 100%;
+  
 }
 
 .deleteBtn {
   position: absolute;
-  top: 35%;
-  right: 2%;
+  top: 13%;
+  right: 3%;
   background: none;
   border: none;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ec1837;
+  color: #E05C3A;
   cursor: pointer;
 }
 
@@ -403,7 +476,6 @@ body header .nav-div a {
   left: 50%;
   transform: translateX(-50%);
   background-color: #2a2d33;
-  color: var(--text-color-light);
   font-size: 0.75rem;
   font-weight: 500;
   padding: 0.25rem 0.5rem;
@@ -418,20 +490,45 @@ body header .nav-div a {
   opacity: 1;
 }
 
-.deleteBtn:hover {
-  color: var(--accent-color2);
-}
-.deleteBtn:active {
-  color: var(--accent-color);
+.total-div {
+  width: 30%;
+  height: 300px;
+  background-color: #2D1F0A;
+  border: 1px solid rgba(201,168,76,0.4);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 30px;
+  border-radius: 20px;
+  margin-top: 20px;
+  color: white;
 }
 
-.total-div {
+.total-div p {
   width: 100%;
-  justify-content: center;
-  display: flex;
-  text-align: center;
-  margin-top: 30px;
+  font-size: 3rem;
 }
+
+.total-div button {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #C9A84C;
+  border: none;
+  color: #1A1208;
+  transition: all 0.3s;
+}
+
+.total-div button:hover {
+  scale: 1.1;
+}
+
+
+
 
 /* burger menu */
 
@@ -489,7 +586,7 @@ body header .nav-div a {
 }
 
 .activeBurger {
-  background-image: url("../assets/images/xmark-solid.svg");  
+  background-image: url("../assets/images/xmark-solid.svg");
 }
 
 .cart img {

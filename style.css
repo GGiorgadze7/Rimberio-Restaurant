@@ -10,7 +10,7 @@
 
 body {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
@@ -20,32 +20,34 @@ body {
 
 header {
   width: 100%;
-  height: 15%;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
+  padding: 20px 30px;
   position: absolute;
   top: 0;
   z-index: 999;
-  margin-bottom: 50px;
+  color: #e0d3b8;
 }
 
 header ul {
   display: flex;
   gap: 20px;
+  color: #e0d3b8;
 }
 
 header ul li {
   list-style: none;
+  color: #e0d3b8;
 }
+
 header ul li img {
   width: 40px;
   height: 40px;
 }
 
 .cart {
-  width: 3%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,42 +60,48 @@ header ul li img {
 }
 
 body header .title-div {
-  width: 30%;
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 body header .title-div img {
-  width: 13%;
-  height: 13%;
+  width: 50px;
+  height: 50px;
   margin-right: 10px;
-  min-width: 50px;
 }
 
 body header .title-div h1 {
-  color: white;
-  width: 100px;
+  color: #e0d3b8;
   font-size: 2rem;
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
+  white-space: nowrap;
 }
 
 body header .nav-div {
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 10%;
+  margin-right: 5%;
 }
 
 body header .nav-div a {
-  color: white;
+  
+  color: #e0d3b8;
   text-decoration: none;
   cursor: pointer;
   font-size: 2rem;
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
+  transition: color 0.3s ease;
+}
+
+.nav-div a:hover {
+  color: #d4a373;
 }
 
 /* #endregion */
@@ -104,7 +112,7 @@ main .hero-sec {
   height: 100vh;
   position: relative;
   top: 0;
-  background-image: url(../assets/images/Untitled\ design.png);
+  background-image: url(./assets/images/Untitled\ design.png);
   background-size: cover;
   background-position: center;
   filter: brightness(60%);
@@ -119,17 +127,16 @@ main .hero-sec {
 main .hero-sec h1 {
   width: 62%;
   color: white;
-  font-size: clamp(7rem, 15vw, 13rem);
-
+  font-size: clamp(4rem, 10vw, 13rem);
   font-family: "Gwendolyn", cursive;
   font-weight: 400;
   font-style: normal;
-  min-width: 400px;
+  min-width: 280px;
 }
 
 main .hero-sec p {
   color: white;
-  font-size: clamp(12rem, 23vw, 32rem);
+  font-size: clamp(6rem, 15vw, 32rem);
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
@@ -145,18 +152,18 @@ main .about-sec {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   gap: 50px;
-  padding: 0 30px;
+  padding: 120px 30px 60px;
+  flex-wrap: wrap;
 }
 
 main .about-sec::before {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   content: "";
   position: absolute;
   inset: 0;
-
   background-image: url(./assets/images/Untitled\ design\ \(3\)\ \(1\).png);
   background-size: cover;
   background-position: center;
@@ -168,28 +175,31 @@ main .about-sec h1 {
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
-  width: 180px;
-  min-width: 140px;
-  font-size: 4.5rem;
+  width: auto;
+  min-width: 100px;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: #e0d3b8;
+  text-align: center;
 }
 
 main .about-sec .vision-div {
-  max-height: 870px;
-  width: 500px;
+  width: min(500px, 100%);
   background-color: #ab6f27;
-  padding: 50px 28px;
+  padding: 40px 28px;
 }
 
 main .about-sec .vision-div h2 {
+  color: #e0d3b8;
   margin-bottom: 15px;
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
 }
 
 main .about-sec .vision-div p {
-  font-size: 2.4rem;
+  color: #e0d3b8;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
@@ -206,7 +216,7 @@ main .about-sec .vision-div .button-div {
 main .about-sec .vision-div button {
   background-color: #81551e;
   border: none;
-  color: white;
+  color: #e0d3b8;
   cursor: pointer;
   padding: 15px 30px;
   border-radius: 10px;
@@ -214,24 +224,25 @@ main .about-sec .vision-div button {
   font-weight: 400;
   font-style: normal;
   font-size: 1.5rem;
+  transition: all 0.3s;
 }
 
 main .about-sec .vision-div button:hover {
   background-color: #63431c;
   scale: 1.1;
-  transition: all 0.4s;
 }
 
 main .about-sec .mission-div {
-  width: 500px;
+  width: min(500px, 100%);
   background-color: #ab6f27;
-  padding: 50px 28px;
+  padding: 40px 28px;
+  color: #e0d3b8;
 }
 
 main .about-sec .mission-div button {
   background-color: #81551e;
   border: none;
-  color: white;
+  color: #e0d3b8;
   cursor: pointer;
   padding: 15px 30px;
   border-radius: 10px;
@@ -239,6 +250,7 @@ main .about-sec .mission-div button {
   font-weight: 400;
   font-style: normal;
   font-size: 1.5rem;
+  transition: all 0.3s;
 }
 
 main .about-sec .mission-div .button-div {
@@ -257,14 +269,14 @@ main .about-sec .mission-div button:hover {
 
 main .about-sec .mission-div h2 {
   margin-bottom: 15px;
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
 }
 
 main .about-sec .mission-div p {
-  font-size: 2.4rem;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
@@ -277,12 +289,12 @@ main .menu-sec {
   position: relative;
   color: white;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  padding: 80px 20px 60px;
 }
 
 main .menu-sec::before {
@@ -297,9 +309,9 @@ main .menu-sec::before {
 }
 
 main .menu-sec .img-div img {
-  width: 300px;
-  height: 300px;
-  max-width: 400px;
+  width: clamp(150px, 25vw, 300px);
+  height: clamp(150px, 25vw, 300px);
+  object-fit: cover;
 }
 
 main .menu-sec .text-div {
@@ -307,28 +319,32 @@ main .menu-sec .text-div {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 60px;
-  gap: 200px;
+  margin-bottom: 40px;
+  gap: clamp(20px, 8vw, 200px);
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 main .menu-sec .text-div h1 {
-  color: white;
-  width: 100px;
-  font-size: 4rem;
+  color: #e0d3b8;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
 }
 
 main .menu-sec .text-div p {
-  width: 50%;
+  color: #e0d3b8;
+  width: min(50%, 600px);
+  min-width: 280px;
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
-  font-size: 2rem;
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
 }
 
 main .menu-sec .img-div {
+  color: #e0d3b8;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -343,17 +359,17 @@ main .menu-sec button {
   cursor: pointer;
   padding: 12px 32px;
   border-radius: 8px;
-  color: white;
+  color: #e0d3b8;
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
-  font-size: 2rem;
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  transition: all 0.4s;
 }
 
 main .menu-sec button:hover {
   background-color: #63431c;
   scale: 1.1;
-  transition: all 0.4s;
 }
 
 /* #endregion */
@@ -362,14 +378,14 @@ main .menu-sec button:hover {
 
 .top-products {
   position: relative;
-  color: white;
+  color: #e0d3b8;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  padding: 60px 20px;
 }
 
 .top-products::before {
@@ -385,34 +401,39 @@ main .menu-sec button:hover {
 
 .cards {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   margin-top: 30px;
+  justify-content: center;
 }
 
 .card h3 {
-  font-size: 1.8rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   margin-bottom: 15px;
+  color: #e0d3b8;
 }
 
 .card p {
   font-family: "Gwendolyn", cursive;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 2vw, 1.3rem);
 }
 
 .card {
-  width: 280px;
-  height: 350px;
+  width: clamp(220px, 28vw, 280px);
+  height: auto;
+  min-height: 300px;
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 10px;
   text-align: center;
+  color: #e0d3b8;
 }
 
 .card img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
 }
 
@@ -421,29 +442,27 @@ main .menu-sec button:hover {
   background-color: #ab6f27;
   padding: 12px 32px;
   border-radius: 8px;
-}
-.menu-num:hover {
   transition: all 0.4s;
-  scale: 1.1  ;
+  color: #e0d3b8;
+}
+
+.menu-num:hover {
+  scale: 1.1;
   background-color: #7e5728;
 }
 
-
-.menu-num a{
+.menu-num a {
   text-decoration: none;
   color: white;
-  font-size: 2.2rem;
-  
+  font-size: clamp(1.3rem, 2.5vw, 2.2rem);
 }
-
-
 
 /* #endregion */
 
 /* #region footer */
 .footer {
   width: 100%;
-  height: 30vh;
+  min-height: 30vh;
   position: relative;
   bottom: 0;
   z-index: 99999;
@@ -451,12 +470,14 @@ main .menu-sec button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 100px;
+  gap: 60px;
+  flex-wrap: wrap;
+  padding: 30px 20px;
 }
 
 .footer-title {
   display: flex;
-  width: 250px;
+  width: auto;
   align-items: center;
   gap: 15px;
 }
@@ -469,6 +490,7 @@ main .menu-sec button:hover {
 .footer-title h1 {
   color: white;
   width: 50%;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
 }
 
 .footer-nav ul {
@@ -485,19 +507,22 @@ main .menu-sec button:hover {
 .footer-nav ul a {
   text-decoration: none;
   color: white;
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .footer-iframe {
-  height: 80%;
+  height: 150px;
+  width: min(90%, 400px);
 }
 
 footer .footer-iframe iframe {
-  width: 90%;
+  width: 100%;
   height: 100%;
 }
 
 /* #endregion */
-/* burger menu */
+
+/* #region burger menu */
 
 .burger-nav {
   width: 100%;
@@ -528,6 +553,7 @@ footer .footer-iframe iframe {
   align-items: center;
   justify-content: center;
 }
+
 .burger-nav ul li {
   list-style: none;
 }
@@ -561,6 +587,188 @@ footer .footer-iframe iframe {
   height: 45px;
 }
 
+/* #endregion */
+
+/* ============================================================
+   MENU PAGE SPECIFIC
+   ============================================================ */
+
+.main .products-sec {
+  padding: 100px 20px 40px;
+}
+
+.categories-head {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #ab6f27;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.categories-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cat-filter {
+  width: 100%;
+}
+
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f3ea;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.filter-form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-form label {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #543b1c;
+}
+
+.filter-form select {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #ab6f27;
+  background-color: #fff;
+  font-family: "Romanesco", cursive;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: #543b1c;
+  cursor: pointer;
+}
+
+.cat-button {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.cat-button button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Romanesco", cursive;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  transition: all 0.3s;
+}
+
+#resetFilter {
+  background-color: #e0d3b8;
+  color: #543b1c;
+}
+
+#resetFilter:hover {
+  background-color: #ccc0a5;
+}
+
+#submitFilter {
+  background-color: #ab6f27;
+  color: #e0d3b8;
+}
+
+#submitFilter:hover {
+  background-color: #7e5728;
+}
+
+.products-div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 10px 0;
+}
+
+/* Cart section */
+.cart-sec {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cart-sec.hidden {
+  display: none;
+}
+
+.cart-product {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.total-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  gap: 15px;
+  border-top: 1px solid #ab6f27;
+  margin-top: 20px;
+}
+
+.totalPrice {
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  color: #543b1c;
+}
+
+.checkout {
+  background-color: #ab6f27;
+  border: none;
+  color: #e0d3b8;
+  cursor: pointer;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-family: "Romanesco", cursive;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  transition: all 0.3s;
+}
+
+.checkout:hover {
+  background-color: #63431c;
+  scale: 1.05;
+}
+
+
+@media (max-width: 1024px) {
+  main .hero-sec {
+    height: 80vh;
+  }
+
+  body header .title-div h1 {
+    font-size: 1.6rem;
+  }
+
+  body header .nav-div a {
+    font-size: 1.6rem;
+  }
+
+  header ul {
+    gap: 12px;
+  }
+
+  main .about-sec {
+    gap: 30px;
+  }
+
+  main .menu-sec .text-div {
+    gap: 40px;
+  }
+}
+
+/* Tablets */
 @media (max-width: 768px) {
   .burger-btn {
     display: flex;
@@ -570,7 +778,165 @@ footer .footer-iframe iframe {
     top: 18px;
   }
 
+  
+
   .nav-div {
-    display: none;
+    display: none !important; 
+  }
+
+  main .hero-sec {
+    padding-bottom: 160px;
+    padding-left: 10%;
+  }
+
+  main .hero-sec h1 {
+    width: 85%;
+    min-width: 200px;
+  }
+
+  main .about-sec {
+    padding: 100px 20px 50px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main .about-sec h1 {
+    font-size: 3rem;
+  }
+
+  main .about-sec .vision-div,
+  main .about-sec .mission-div {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  main .menu-sec .text-div {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  main .menu-sec .text-div p {
+    width: 90%;
+  }
+
+  .cards {
+    gap: 20px;
+  }
+
+  .card {
+    width: clamp(180px, 45vw, 280px);
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-title {
+    justify-content: center;
+  }
+
+  .filter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cat-button {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  body header .title-div h1 {
+    font-size: 1.2rem;
+  }
+
+  body header .title-div img {
+    width: 36px;
+    height: 36px;
+  }
+
+  main .hero-sec {
+    padding-bottom: 100px;
+    padding-left: 5%;
+    align-items: flex-start;
+  }
+
+  main .hero-sec h1 {
+    font-size: clamp(3rem, 9vw, 5rem);
+    min-width: auto;
+    width: 95%;
+  }
+
+  main .hero-sec p {
+    font-size: clamp(4rem, 12vw, 8rem);
+  }
+
+  main .about-sec {
+    padding: 90px 15px 40px;
+    gap: 20px;
+  }
+
+  main .about-sec h1 {
+    font-size: 2.5rem;
+  }
+
+  main .about-sec .vision-div,
+  main .about-sec .mission-div {
+    padding: 30px 18px;
+  }
+
+  main .menu-sec {
+    padding: 70px 15px 50px;
+  }
+
+  main .menu-sec .img-div img {
+    width: clamp(120px, 40vw, 200px);
+    height: clamp(120px, 40vw, 200px);
+  }
+
+  .top-products {
+    padding: 50px 15px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: min(100%, 320px);
+  }
+
+  .card img {
+    height: 160px;
+  }
+
+  .footer {
+    padding: 25px 15px;
+    gap: 25px;
+  }
+
+  .footer-iframe {
+    width: 100%;
+  }
+
+  .total-div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .checkout {
+    width: 100%;
+    text-align: center;
+  }
+
+  .products-div {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
   }
 }

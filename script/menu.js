@@ -27,7 +27,7 @@ function products(card) {
     title.textContent = food.name;
 
     const price = document.createElement("span");
-    price.textContent = food.price;
+    price.textContent = food.price + "$";
 
     const button = document.createElement("button");
     button.textContent = "Add To Cart";
@@ -158,8 +158,9 @@ function fetchCart() {
         const cartImage = document.createElement("img");
         cartImage.src = item.product.image;
         const cartName = document.createElement("h3");
+        cartName.classList.add("cart-food-name")
         cartName.textContent = item.product.name;
-        cartItemName.append(cartImage, cartName);
+        cartItemName.append(cartImage);
 
         const qty = document.createElement("div");
         qty.classList.add("qty");
@@ -167,25 +168,36 @@ function fetchCart() {
 
         const qtyMinus = document.createElement("button");
         qtyMinus.textContent = "-";
+        qtyMinus.classList.add("minusBtn");
         const qtyPlus = document.createElement("button");
+        qtyPlus.classList.add("plus");
         qtyPlus.textContent = "+";
         qty.prepend(qtyMinus);
         qty.append(qtyPlus);
 
         const price = document.createElement("span");
         price.classList.add("price");
-        price.textContent = item.product.price;
+        price.textContent = "Price:  " + item.product.price + "$";
+
+        const lorem = document.createElement("p");
+        lorem.classList.add("lorem");
+        lorem.textContent =
+          "A delicious, traditional dish that stands out for its price and taste. Try it and enjoy, enjoy, Jigaro.";
 
         const total = document.createElement("span");
         total.classList.add("total");
-        total.textContent = item.quantity * item.product.price;
+        total.textContent = "Total-price: " + item.quantity * item.product.price + "$";
+
+        const cartItemInfo = document.createElement("div");
+        cartItemInfo.classList.add("cart-info");
+        cartItemInfo.append(cartName, lorem, price);
 
         const deleteBtn = document.createElement("button");
         deleteBtn.classList.add("deleteBtn");
         deleteBtn.id = "deleteBtnId";
         deleteBtn.textContent = "X";
 
-        cartItem.append(cartItemName, qty, price, total, deleteBtn);
+        cartItem.append(cartItemName, cartItemInfo, qty, total, deleteBtn);
 
         deleteBtn.addEventListener("click", () =>
           productDelete(item.product.id),
@@ -214,7 +226,8 @@ function fetchCart() {
         return allTotal;
       }, 0);
 
-      document.querySelector(".totalPrice").textContent = "$" + allTotal;
+      document.querySelector(".totalPrice").textContent =
+        "Total price:   " + allTotal + "$";
     });
 }
 
