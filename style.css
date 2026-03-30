@@ -302,7 +302,7 @@ main .menu-sec::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url(../assets/images/s2\ \(1\).webp);
+  background-image: url(./assets/images/s2\ \(1\).webp);
   background-size: cover;
   background-position: center;
   filter: brightness(70%);
@@ -574,7 +574,7 @@ footer .footer-iframe iframe {
   height: 2rem;
   background: none;
   border: none;
-  background-image: url("../assets/images/bars-solid.png");
+  background-image: url("./assets/images/bars-solid.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
