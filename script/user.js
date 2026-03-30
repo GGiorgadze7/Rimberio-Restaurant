@@ -21,6 +21,7 @@ const regText = document.querySelector(".regtext");
 const signText = document.querySelector(".signtext");
 const regBtn = document.querySelector(".regbtn");
 const signBtn = document.querySelector(".signbtn");
+const signDiv = document.querySelector(".singin-div");
 
 regBtn.addEventListener("click", () => {
   regForm.classList.toggle("hidden");
@@ -29,6 +30,7 @@ regBtn.addEventListener("click", () => {
   regBtn.classList.toggle("hidden");
   regText.classList.toggle("hidden");
   signText.classList.toggle("hidden");
+  signDiv.classList.toggle("style-remove");
 });
 
 signBtn.addEventListener("click", () => {
@@ -38,9 +40,10 @@ signBtn.addEventListener("click", () => {
   regBtn.classList.toggle("hidden");
   regText.classList.toggle("hidden");
   signText.classList.toggle("hidden");
+  signDiv.classList.toggle("style-remove");
 });
 
-regSubmit.addEventListener("click", (e) => {
+regForm.addEventListener("submit", (e) => {
   e.preventDefault();
   userRegister();
 });
@@ -63,36 +66,31 @@ async function userRegister() {
 
   if (!resp.ok) {
     let msg = await resp.text();
+
     alert(msg);
     return;
   }
 
   let data = await resp.json();
-
   console.log(data);
   regForm.reset();
 }
 
-// login user
-
 const signEmail = document.querySelector("#signin-email");
 const signInPassword = document.querySelector("#signin-pas");
 const signInForm = document.querySelector(".signin-form");
+const signInsubmit = document.querySelector("#signinsubmit");
 
-signInForm.addEventListener("submit", (e) => {
+signInsubmit.addEventListener("click", (e) => {
   e.preventDefault();
   userSignIn();
 });
 
 async function userSignIn() {
-  if (!signEmail.value || !signInPassword.value) {
-    alert("შეავსეთ ყველა ველი");
-    return;
-  }
-
   const signInData = {
     email: signEmail.value,
     password: signInPassword.value,
+    role: "user",
   };
 
   let resp = await fetch("https://rentcar.stepprojects.ge/api/Users/login", {
@@ -103,12 +101,12 @@ async function userSignIn() {
 
   if (!resp.ok) {
     let msg = await resp.text();
+
     alert(msg);
     return;
   }
 
   let data = await resp.json();
-
   console.log(data);
 
   localStorage.setItem("token", data.token);

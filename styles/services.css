@@ -20,32 +20,34 @@ body {
 
 header {
   width: 100%;
-  height: 15%;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
+  padding: 20px 30px;
   position: absolute;
   top: 0;
   z-index: 999;
-  margin-bottom: 50px;
+  color: #e0d3b8;
 }
 
 header ul {
   display: flex;
   gap: 20px;
+  color: #e0d3b8;
 }
 
 header ul li {
   list-style: none;
+  color: #e0d3b8;
 }
+
 header ul li img {
   width: 40px;
   height: 40px;
 }
 
 .cart {
-  width: 3%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,42 +60,48 @@ header ul li img {
 }
 
 body header .title-div {
-  width: 30%;
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 body header .title-div img {
-  width: 13%;
-  height: 13%;
+  width: 50px;
+  height: 50px;
   margin-right: 10px;
-  min-width: 50px;
 }
 
 body header .title-div h1 {
-  color: white;
-  width: 100px;
+  color: #e0d3b8;
   font-size: 2rem;
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
+  white-space: nowrap;
 }
 
 body header .nav-div {
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 10%;
+  margin-right: 5%;
 }
 
 body header .nav-div a {
-  color: white;
+  
+  color: #e0d3b8;
   text-decoration: none;
   cursor: pointer;
   font-size: 2rem;
   font-family: "Romanesco", cursive;
   font-weight: 400;
   font-style: normal;
+  transition: color 0.3s ease;
+}
+
+.nav-div a:hover {
+  color: #d4a373;
 }
 
 /* #endregion */
@@ -210,7 +218,7 @@ body header .nav-div a {
 /* #region footer */
 .footer {
   width: 100%;
-  height: 30vh;
+  min-height: 30vh;
   position: relative;
   bottom: 0;
   z-index: 99999;
@@ -218,12 +226,14 @@ body header .nav-div a {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 100px;
+  gap: 60px;
+  flex-wrap: wrap;
+  padding: 30px 20px;
 }
 
 .footer-title {
   display: flex;
-  width: 250px;
+  width: auto;
   align-items: center;
   gap: 15px;
 }
@@ -236,6 +246,7 @@ body header .nav-div a {
 .footer-title h1 {
   color: white;
   width: 50%;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
 }
 
 .footer-nav ul {
@@ -252,15 +263,16 @@ body header .nav-div a {
 .footer-nav ul a {
   text-decoration: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .footer-iframe {
-  height: 80%;
+  height: 150px;
+  width: min(90%, 400px);
 }
 
 footer .footer-iframe iframe {
-  width: 90%;
+  width: 100%;
   height: 100%;
 }
 
@@ -342,6 +354,25 @@ footer .footer-iframe iframe {
   }
 
   .nav-div {
-    display: none;
+    display: none !important;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-title {
+    justify-content: center;
+  }
+
+  .filter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footer-nav ul a {
+    font-size: 1.6rem;
   }
 }

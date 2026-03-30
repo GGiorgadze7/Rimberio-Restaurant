@@ -155,7 +155,6 @@ main .about-sec {
   min-height: 100vh;
   gap: 50px;
   padding: 120px 30px 60px;
-  flex-wrap: wrap;
 }
 
 main .about-sec::before {
@@ -407,6 +406,10 @@ main .menu-sec button:hover {
   justify-content: center;
 }
 
+.card:hover {
+  scale: 1.05;
+}
+
 .card h3 {
   font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   margin-bottom: 15px;
@@ -429,6 +432,7 @@ main .menu-sec button:hover {
   border-radius: 10px;
   text-align: center;
   color: #e0d3b8;
+  transition: all 0.3s;
 }
 
 .card img {
@@ -589,9 +593,7 @@ footer .footer-iframe iframe {
 
 /* #endregion */
 
-/* ============================================================
-   MENU PAGE SPECIFIC
-   ============================================================ */
+
 
 .main .products-sec {
   padding: 100px 20px 40px;
