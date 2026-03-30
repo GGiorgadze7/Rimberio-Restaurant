@@ -51,7 +51,23 @@ function addToCart(qty, price, id) {
     body: JSON.stringify(reqBodyObj),
   })
     .then((resp) => resp.json())
-    .then((data) => console.log(data));
+    .then(() => showToast("Item added to cart!"))
+    .catch(() => showToast("Failed to add item.", true));
+}
+
+function showToast(message, isError = false) {
+  const toast = document.createElement("div");
+  toast.classList.add("toast-notification");
+  if (isError) toast.classList.add("toast-error");
+  toast.textContent = message;
+  document.body.appendChild(toast);
+
+  requestAnimationFrame(() => toast.classList.add("toast-show"));
+
+  setTimeout(() => {
+    toast.classList.remove("toast-show");
+    toast.addEventListener("transitionend", () => toast.remove());
+  }, 2500);
 }
 
 // categories ასარჩევი ველი
@@ -158,7 +174,7 @@ function fetchCart() {
         const cartImage = document.createElement("img");
         cartImage.src = item.product.image;
         const cartName = document.createElement("h3");
-        cartName.classList.add("cart-food-name")
+        cartName.classList.add("cart-food-name");
         cartName.textContent = item.product.name;
         cartItemName.append(cartImage);
 
@@ -186,7 +202,8 @@ function fetchCart() {
 
         const total = document.createElement("span");
         total.classList.add("total");
-        total.textContent = "Total-price: " + item.quantity * item.product.price + "$";
+        total.textContent =
+          "Total-price: " + item.quantity * item.product.price + "$";
 
         const cartItemInfo = document.createElement("div");
         cartItemInfo.classList.add("cart-info");
@@ -254,3 +271,60 @@ function updateQuantity(quantity, price, productId) {
     body: JSON.stringify(reqBodyObj),
   }).then(() => fetchCart());
 }
+
+// checkout modal
+const checkoutBtn = document.querySelector(".checkout");
+const overlay = document.querySelector(".checkout-overlay");
+const cancelCheckout = document.querySelector(".btn-cancel-checkout");
+const checkoutForm = document.querySelector(".checkout-form");
+const cardNumber = document.querySelector("#cardNumber");
+const cardExpiry = document.querySelector("#cardExpiry");
+
+checkoutBtn.addEventListener("click", () => {
+  overlay.classList.remove("hidden");
+});
+
+cancelCheckout.addEventListener("click", () => {
+  overlay.classList.add("hidden");
+  checkoutForm.reset();
+});
+
+overlay.addEventListener("click", (e) => {
+  if (e.target === overlay) {
+    overlay.classList.add("hidden");
+    checkoutForm.reset();
+  }
+});
+
+cardNumber.addEventListener("input", () => {
+  let val = cardNumber.value.replace(/\D/g, "").slice(0, 16);
+  cardNumber.value = val.replace(/(\d{4})(?=\d)/g, "$1 ");
+});
+
+cardExpiry.addEventListener("input", () => {
+  let val = cardExpiry.value.replace(/\D/g, "").slice(0, 4);
+  if (val.length >= 3) val = val.slice(0, 2) + "/" + val.slice(2);
+  cardExpiry.value = val;
+});
+
+checkoutForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = document.querySelector("#cardName").value.trim();
+  const number = cardNumber.value.replace(/\s/g, "");
+  const expiry = cardExpiry.value.trim();
+  const cvv = document.querySelector("#cardCvv").value.trim();
+
+  if (!name || number.length < 16 || expiry.length < 5 || cvv.length < 3) {
+    showToast("Please fill in all fields correctly.", true);
+    return;
+  }
+
+  overlay.classList.add("hidden");
+  checkoutForm.reset();
+  showToast("Payment successful! Redirecting...");
+
+  setTimeout(() => {
+    window.location.href = "../index.html";
+  }, 2000);
+});

@@ -18,7 +18,7 @@ body {
 }
 
 .hidden {
-  display: none !important; 
+  display: none !important;
 }
 
 /* header */
@@ -57,6 +57,14 @@ header ul li img {
   align-items: center;
 }
 
+header .cart-div {
+  padding-right: 50px;
+}
+
+header .cart-div img {
+  cursor: pointer;
+}
+
 .nav-div ul .cart-list {
   width: 10px;
   height: 50px;
@@ -93,7 +101,6 @@ body header .nav-div {
 }
 
 body header .nav-div a {
-  
   color: #e0d3b8;
   text-decoration: none;
   cursor: pointer;
@@ -107,8 +114,6 @@ body header .nav-div a {
 .nav-div a:hover {
   color: #d4a373;
 }
-
-
 
 /* main */
 .categories-div {
@@ -156,20 +161,24 @@ body header .nav-div a {
 }
 
 .filter-form {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 16px 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 16px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  width: 100%;
 }
 
 .vegetarian-div {
-  width: 200px;
+  width: 160px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 25px;
+  gap: 6px;
+  margin-bottom: 0;
 }
 
 .filter-form #vegetarianSel {
@@ -185,11 +194,11 @@ body header .nav-div a {
 }
 
 .nuts-div {
-  width: 200px;
+  width: 160px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 25px;
+  gap: 6px;
+  margin-bottom: 0;
 }
 
 .filter-form #nutsSel {
@@ -205,11 +214,11 @@ body header .nav-div a {
 }
 
 .spice-div {
-  width: 200px;
+  width: 160px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 25px;
+  gap: 6px;
+  margin-bottom: 0;
 }
 
 #spicinesSel {
@@ -225,11 +234,11 @@ body header .nav-div a {
 }
 
 .cat-sel {
-  width: 200px;
+  width: 160px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: 6px;
+  margin-bottom: 0;
 }
 
 #categorySel {
@@ -248,6 +257,8 @@ body header .nav-div a {
 .cat-button {
   display: flex;
   gap: 10px;
+  align-self: flex-end;
+  padding-bottom: 2px;
 }
 
 #resetFilter {
@@ -300,6 +311,9 @@ body header .nav-div a {
 
 .cat-filter {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 /* products style */
@@ -310,6 +324,7 @@ body header .nav-div a {
   gap: 20px;
   justify-content: center;
   align-items: center;
+  padding: 0 10px;
 }
 
 .card {
@@ -577,7 +592,7 @@ body header .nav-div a {
 
 .burger-btn {
   display: none;
-  width: 2rem;
+  width: 2.5rem;
   height: 2rem;
   background: none;
   border: none;
@@ -585,6 +600,7 @@ body header .nav-div a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
 }
 
 .nav-active {
@@ -600,10 +616,164 @@ body header .nav-div a {
   height: 45px;
 }
 
+/* checkout modal */
+.checkout-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
 
+.checkout-modal {
+  background: linear-gradient(135deg, #2d1f0a, #3b2b01);
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  border-radius: 16px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 460px;
+  color: white;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+.checkout-modal h2 {
+  font-size: 2.4rem;
+  color: #ecba7b;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.checkout-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.checkout-field label {
+  font-size: 1.4rem;
+  color: #c9a84c;
+}
+
+.checkout-field input {
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background-color: rgba(255, 255, 255, 0.07);
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Romanesco", cursive;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.checkout-field input:focus {
+  border-color: #c9a84c;
+}
+
+.checkout-field input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.checkout-field-row {
+  display: flex;
+  gap: 16px;
+}
+
+.checkout-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.btn-cancel-checkout {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  border-radius: 10px;
+  background: transparent;
+  color: #e0d3b8;
+  font-size: 1.3rem;
+  font-family: "Romanesco", cursive;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-cancel-checkout:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.btn-confirm-checkout {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #c9a84c;
+  color: #1a1208;
+  font-size: 1.3rem;
+  font-family: "Romanesco", cursive;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-confirm-checkout:hover {
+  background-color: #e0ba58;
+  scale: 1.03;
+}
+
+@media (max-width: 480px) {
+  .checkout-modal {
+    padding: 28px 20px;
+  }
+
+  .checkout-field-row {
+    flex-direction: column;
+  }
+}
+
+/* toast notification */
+.toast-notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #c9a84c;
+  color: #1a1208;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  font-family: "Romanesco", cursive;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+.toast-notification.toast-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-notification.toast-error {
+  background-color: #e05c3a;
+  color: white;
+}
 
 /* footer */
-  .footer {
+.footer {
   width: 100%;
   min-height: 30vh;
   position: relative;
@@ -664,7 +834,49 @@ footer .footer-iframe iframe {
   height: 100%;
 }
 
+@media (max-width: 1024px) {
+  .cat-filter {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .filter-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 16px;
+    gap: 16px;
+  }
+
+  .vegetarian-div,
+  .nuts-div,
+  .spice-div,
+  .cat-sel {
+    width: 160px;
+    margin-bottom: 0;
+  }
+
+  .products-div {
+    width: 100%;
+    justify-content: center;
+    padding: 0 16px;
+  }
+
+  .cart-sec {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart-product {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .total-div {
+    width: 80%;
+    margin: 20px auto;
+  }
+}
 
 @media (max-width: 768px) {
   .burger-btn {
@@ -672,11 +884,92 @@ footer .footer-iframe iframe {
     position: fixed;
     z-index: 1001;
     right: 15px;
-    top: 18px;
+    top: 28px;
   }
 
   .nav-div {
     display: none !important;
+  }
+
+  .title-div h1 {
+    font-size: 1.3rem;
+  }
+
+  .categories-head {
+    font-size: 2rem;
+  }
+
+  .categories-div button {
+    width: 110px;
+    font-size: 1.1rem;
+    padding: 8px 12px;
+  }
+
+  .cat-filter {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-form {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .vegetarian-div,
+  .nuts-div,
+  .spice-div,
+  .cat-sel {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .products-div {
+    width: 100%;
+    padding: 0 12px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .card img {
+    width: 80%;
+    height: auto;
+  }
+
+  .cart-sec {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart-product {
+    width: 100%;
+    padding: 0 12px;
+  }
+
+  .cartItem {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cartItemName {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .cart-info {
+    width: 100%;
+  }
+
+  .total-div {
+    width: 90%;
+    margin: 20px auto;
   }
 
   .footer {
@@ -689,14 +982,7 @@ footer .footer-iframe iframe {
     justify-content: center;
   }
 
-  .filter-form {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
   .footer-nav ul a {
     font-size: 1.6rem;
   }
-
-
 }

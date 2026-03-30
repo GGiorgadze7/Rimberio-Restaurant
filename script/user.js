@@ -1,3 +1,32 @@
+// check token on load
+const loggedInDiv = document.querySelector(".logged-in-div");
+const signInSection = document.querySelector(".singin-div");
+const logoutBtn = document.querySelector(".logout-btn");
+const pageTitle = document.querySelector(".title");
+const regForm = document.querySelector(".reg-form");
+
+function showLoggedIn() {
+  loggedInDiv.classList.remove("hidden");
+  signInSection.classList.add("hidden");
+  regForm.classList.add("hidden");
+  pageTitle.textContent = "Welcome Back!";
+}
+
+function showLoggedOut() {
+  loggedInDiv.classList.add("hidden");
+  signInSection.classList.remove("hidden");
+  pageTitle.textContent = "Welcome";
+}
+
+if (localStorage.getItem("token")) {
+  showLoggedIn();
+}
+
+logoutBtn.addEventListener("click", () => {
+  localStorage.removeItem("token");
+  showLoggedOut();
+});
+
 // burger menu
 const burgerBtn = document.querySelector(".burger-btn");
 const nav = document.querySelector(".burger-nav");
@@ -16,7 +45,6 @@ const regPassword = document.querySelector("#regPassword");
 const regNumber = document.querySelector("#regNumber");
 const regReset = document.querySelector("#regReset");
 const regSubmit = document.querySelector("#regSubmit");
-const regForm = document.querySelector(".reg-form");
 const regText = document.querySelector(".regtext");
 const signText = document.querySelector(".signtext");
 const regBtn = document.querySelector(".regbtn");
@@ -76,7 +104,7 @@ async function userRegister() {
   regForm.reset();
 }
 
-const signEmail = document.querySelector("#signin-email");
+const signPhone = document.querySelector("#signin-phone");
 const signInPassword = document.querySelector("#signin-pas");
 const signInForm = document.querySelector(".signin-form");
 const signInsubmit = document.querySelector("#signinsubmit");
@@ -88,7 +116,7 @@ signInsubmit.addEventListener("click", (e) => {
 
 async function userSignIn() {
   const signInData = {
-    email: signEmail.value,
+    phoneNumber: signPhone.value,
     password: signInPassword.value,
     role: "user",
   };
@@ -111,4 +139,5 @@ async function userSignIn() {
 
   localStorage.setItem("token", data.token);
   signInForm.reset();
+  showLoggedIn();
 }

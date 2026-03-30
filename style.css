@@ -226,6 +226,8 @@ main .about-sec .vision-div button {
   transition: all 0.3s;
 }
 
+
+
 main .about-sec .vision-div button:hover {
   background-color: #63431c;
   scale: 1.1;
@@ -742,6 +744,69 @@ footer .footer-iframe iframe {
   background-color: #63431c;
   scale: 1.05;
 }
+
+
+
+
+/* 404 page styles */
+main .page-404 {
+  width: 100%;
+  height: 100vh;
+  background-color: #460001;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #e0d3b8;
+  padding-bottom: 150px;
+
+}
+
+main .page-404 img{
+  width: 500px;
+  fill: white;
+  
+}
+
+main .page-404 h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-family: "Gwendolyn", cursive;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+main .page-404 p {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-family: "Romanesco", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 20px;
+}
+
+main .page-404 button {
+  margin-top: 30px;
+  background-color: #ab6f27;
+  border: none;
+  color: #e0d3b8;
+  cursor: pointer;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-family: "Romanesco", cursive;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  transition: all 0.3s;
+}
+
+main .page-404 button a {
+  text-decoration: none;
+  color: #e0d3b8;
+}
+
+main .page-404 button:hover {
+  background-color: #815a2a;
+  scale: 1.05;
+}
+
 
 
 @media (max-width: 1024px) {

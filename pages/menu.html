@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Caprasimo&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Gwendolyn:wght@400;700&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Romanesco&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link rel="stylesheet" href="../styles/menu.css" />
     <script src="../script/menu.js" defer></script>
     <title>Document</title>
-    <link rel="icon" type="image/x-icon" href="../assets/images/Untitled design (2)-Photoroom.png">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/images/Untitled design (2)-Photoroom.png" />
   </head>
   <body>
     <header>
       <div class="title-div">
         <img
           src="../assets/images/Untitled design (2)-Photoroom.png"
-          alt="logo"
-        />
+          alt="logo" />
         <h1>Rimberio Restaurant</h1>
       </div>
 
@@ -28,15 +29,20 @@
           <li><a href="./about.html">About us</a></li>
           <li><a href="./services.html">Service</a></li>
           <li><a href="./menu.html">Menu</a></li>
+          
+          <li><a href="./login.html">Login</a></li>
+        </ul>
+      </div>
+
+      <div class="cart-div">
+        <ul>
           <li class="cart-list">
             <a class="cart">
               <img
                 src="../assets/images/cart-arrow-down-solid.png"
-                alt="cart"
-              />
+                alt="cart" />
             </a>
           </li>
-          <li><a href="./login.html">Login</a></li>
         </ul>
       </div>
     </header>
@@ -120,6 +126,56 @@
       </section>
     </main>
 
-    
+    <!-- Checkout Modal -->
+    <div class="checkout-overlay hidden">
+      <div class="checkout-modal">
+        <h2>Payment Details</h2>
+        <form class="checkout-form" novalidate>
+          <div class="checkout-field">
+            <label for="cardName">Cardholder Name</label>
+            <input
+              type="text"
+              id="cardName"
+              placeholder="John Doe"
+              autocomplete="cc-name" />
+          </div>
+          <div class="checkout-field">
+            <label for="cardNumber">Card Number</label>
+            <input
+              type="text"
+              id="cardNumber"
+              placeholder="1234 5678 9012 3456"
+              maxlength="19"
+              autocomplete="cc-number" />
+          </div>
+          <div class="checkout-field-row">
+            <div class="checkout-field">
+              <label for="cardExpiry">Expiry Date</label>
+              <input
+                type="text"
+                id="cardExpiry"
+                placeholder="MM/YY"
+                maxlength="5"
+                autocomplete="cc-exp" />
+            </div>
+            <div class="checkout-field">
+              <label for="cardCvv">CVV</label>
+              <input
+                type="text"
+                id="cardCvv"
+                placeholder="123"
+                maxlength="3"
+                autocomplete="cc-csc" />
+            </div>
+          </div>
+          <div class="checkout-actions">
+            <button type="button" class="btn-cancel-checkout">Cancel</button>
+            <button type="submit" class="btn-confirm-checkout">
+              Confirm Payment
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
